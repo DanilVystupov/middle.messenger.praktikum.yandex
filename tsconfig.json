@@ -19,8 +19,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-
-    "types": ["vite-plugin-handlebars"]
   },
   "include": ["src", "vite.config.ts"]
 }
