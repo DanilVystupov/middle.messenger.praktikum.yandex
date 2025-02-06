@@ -6,12 +6,21 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "start": "vite build && node server.cjs",
     "preview": "vite preview"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "express": "^4.19.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.1",
+    "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
+    "postcss-mixins": "^11.0.3",
+    "postcss-nested": "^6.2.0",
+    "postcss-preset-env": "^10.0.7",
+    "postcss-simple-vars": "^7.0.1",
     "typescript": "~5.7.2",
     "vite": "^6.1.0",
     "vite-plugin-handlebars": "^2.0.0"
