@@ -1,2 +1,6 @@
 export { LoginPage } from './login'
 export { SignUpPage } from './sign-up'
+export { BasePage } from './base'
+export { ProfilePage } from './profile'
+export { ErrorPage404 } from './404'
+export { ErrorPage500 } from './500'

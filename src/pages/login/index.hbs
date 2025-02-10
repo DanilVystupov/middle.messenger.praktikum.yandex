@@ -1,11 +1,22 @@
-<div class="login-wrapper">
-  <div class="login-card">
-    <h2 class="login-title">
-      Вход
-    </h2>
-    {{> Input label="Логин" type="text" placeholder="Логин" value="123" }}
-    {{> Input label="Пароль" type="password" placeholder="Пароль" value="456" }}
-    {{> Button text="Авторизоваться" }}
-    <p class="login-link">Нет аккаунта?</p>
-  </div>
+<div class="page-login">
+  <form class="form">
+    <div class="form-header">
+      <h2 class="form__title">
+        Вход
+      </h2>
+    </div>
+
+    <div class="form-fields">
+      {{> Input label="Логин" type="text" placeholder="ivanivanov" }}
+      {{> Input label="Пароль" type="password" placeholder="Пароль" autocomplete="current-password" }}
+    </div>
+
+    <div class="form-controls">
+      {{> Button text="Авторизоваться" type="primary" }}
+
+      <a href="#" data-page="signUp">
+        Нет аккаунта?
+      </a>
+    </div>
+  </form>
 </div>
