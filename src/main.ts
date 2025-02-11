@@ -1,7 +1,7 @@
 import Handlebars from 'handlebars'
 import * as Components from './components'
 import * as Pages from './pages'
-import { LOGIN_PAGE } from './utils/constants.ts'
+import { CHATS_PAGE, LOGIN_PAGE } from './utils/constants.ts'
 
 const pages = {
   login: [Pages.LoginPage],
@@ -14,7 +14,8 @@ const pages = {
     }
   ],
   404: [Pages.ErrorPage404],
-  500: [Pages.ErrorPage500]
+  500: [Pages.ErrorPage500],
+  chats: [Pages.ChatsPage]
 }
 
 Object.entries(Components).forEach(([name, template]) => {
@@ -30,7 +31,7 @@ function navigate(page: string) {
   container.innerHTML = templatingFunction(context)
 }
 
-document.addEventListener('DOMContentLoaded', () => navigate(LOGIN_PAGE))
+document.addEventListener('DOMContentLoaded', () => navigate(CHATS_PAGE))
 
 document.addEventListener('click', (e) => {
   //@ts-ignore

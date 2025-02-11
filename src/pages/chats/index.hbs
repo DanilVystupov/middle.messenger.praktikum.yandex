@@ -1,0 +1,89 @@
+<div class="chats-page">
+  <div class="chats-page-left">
+    <div class="chats-page-left__header">
+      <a
+        href="#"
+        data-page="profile"
+        class="chats-page-left__link f-12"
+      >
+        Профиль <span>></span>
+      </a>
+
+      <label>
+        <input type="text" placeholder="Поиск" name="search"/>
+      </label>
+    </div>
+
+    <ul class="chats-page-left__list chat-list">
+      <li class="chat-list__item chat-item-wrapper">
+        <div class="chat-item">
+          <img src="#" alt="alt" class="chat-item__image"/>
+
+          <div class="chat-item__info">
+            <div class="chat-item__text">
+              <span class="chat-item__name f-13">
+                Андрей
+              </span>
+
+              <span class="chat-item__message f-12">
+                СООБЩЕНИЕ ОТ ЮЗЕРА
+              </span>
+            </div>
+
+            <div class="chat-item__details">
+              <span class="chat-item__message-time f-9">
+                10:49
+              </span>
+
+              <span class="chat-item__message-count f-11">
+                2
+              </span>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="chats-page-right">
+    <div class="chats-page-right__header">
+      <div>
+        <img src="#" alt="аватарка" class="chat-item__image"/>
+
+        <div>
+          <span class="chat-item__name">
+            Андрей
+          </span>
+        </div>
+      </div>
+
+      <div>
+        ...
+      </div>
+    </div>
+
+    <div class="chats-page-right__main">
+      <div class="chat-history-messages">
+        <div class="chat-history-messages__date">
+          19 июня
+        </div>
+
+        <div class="chat-history-messages__message chat-history-messages__message--incoming">
+          ВХОДЯЩЕЕ СООБЩЕНИЕ
+        </div>
+
+        <div class="chat-history-messages__message chat-history-messages__message--outgoing">
+          ИСХОДЯЩЕЕ СООБЩЕНИЕ
+        </div>
+      </div>
+    </div>
+
+    <div class="chats-page-right__footer">
+      <label>
+        <input type="text" placeholder="Сообщение" name="message"/>
+      </label>
+
+      {{> Button text="->" type="primary"  }}
+    </div>
+  </div>
+</div>
