@@ -1,0 +1,19 @@
+<div class="modal {{#if isActive }}modal--active{{/if}}">
+  <div class="modal__overlay"></div>
+
+  <div class="modal__form-wrapper">
+    <form class="modal__form">
+      <div class="modal__title">
+        {{#> title}}{{/title}}
+      </div>
+
+      <div class="modal__fields">
+        {{#> fields}}{{/fields}}
+      </div>
+
+      <div class="modal__controls">
+        {{#> controls}}{{/controls}}
+      </div>
+    </form>
+  </div>
+</div>

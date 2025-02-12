@@ -58,68 +58,80 @@
     </ul>
   </div>
 
-  {{#if true}}
-    <div class="chats-page-right">
-      <div class="chats-page-right__header">
-        <div class="chat-item">
-          {{#if openChat.userInfo.avatar}}
-            <img src="{{openChat.userInfo.avatar}}" alt="{{openChat.userInfo.name}}" class="chat-item__avatar"/>
+  <div class="chats-page-right">
+    <div class="chats-page-right__header">
+      <div class="chat-item">
+        {{#if openChat.userInfo.avatar}}
+          <img src="{{openChat.userInfo.avatar}}" alt="{{openChat.userInfo.name}}" class="chat-item__avatar"/>
 
-          {{else}}
-            <div class="chat-item__avatar chat-item__avatar--default"></div>
-          {{/if}}
+        {{else}}
+          <div class="chat-item__avatar chat-item__avatar--default"></div>
+        {{/if}}
 
-          <div>
-            <span class="chat-item__name">
-              {{openChat.userInfo.name}}
-            </span>
-          </div>
-        </div>
-
-        <div class="chats-page-right__menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div>
+          <span class="chat-item__name">
+            {{openChat.userInfo.name}}
+          </span>
         </div>
       </div>
 
-      <div class="chats-page-right__main">
-        <div class="chat-history-messages">
-          <div class="chat-history-messages__date f-12">
-            19 июня
-          </div>
-
-          <div class="chat-history-messages__message chat-history-messages__message--incoming">
-            <p class="chat-history-messages__message-text">
-              Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
-              <br/><br/>
-              Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
-            </p>
-
-            <span class="chat-history-messages__message-date f-9">
-              10:20
-            </span>
-          </div>
-
-          <div class="chat-history-messages__message chat-history-messages__message--outgoing">
-            <p class="chat-history-messages__message-text">
-              Круто!
-            </p>
-
-            <span class="chat-history-messages__message-date f-9">
-              12:00
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="chats-page-right__footer">
-        <label>
-          <input type="text" placeholder="Сообщение" name="message"/>
-        </label>
-
-        {{> Button text="->" type="primary"  }}
+      <div class="chats-page-right__menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
-  {{/if}}
+
+    <div class="chats-page-right__main">
+      <div class="chat-history-messages">
+        <div class="chat-history-messages__date f-12">
+          19 июня
+        </div>
+
+        <div class="chat-history-messages__message chat-history-messages__message--incoming">
+          <p class="chat-history-messages__message-text">
+            Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
+            <br/><br/>
+            Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
+          </p>
+
+          <span class="chat-history-messages__message-date f-9">
+            10:20
+          </span>
+        </div>
+
+        <div class="chat-history-messages__message chat-history-messages__message--outgoing">
+          <p class="chat-history-messages__message-text">
+            Круто!
+          </p>
+
+          <span class="chat-history-messages__message-date f-9">
+            12:00
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chats-page-right__footer">
+      <label>
+        <input type="text" placeholder="Сообщение" name="message"/>
+      </label>
+
+      {{> Button text="->" type="primary"  }}
+    </div>
+  </div>
+
+  {{#> Modal isActive=isActiveModal }}
+    {{#*inline "title"}}
+      Добавить пользователя
+    {{/inline}}
+
+    {{#*inline "fields"}}
+      {{> Input label="Логин" type="text" placeholder="ivanivanov" }}
+    {{/inline}}
+
+    {{#*inline "controls"}}
+      {{> Button text="Добавить" type="primary" }}
+    {{/inline}}
+  {{/Modal}}
 </div>

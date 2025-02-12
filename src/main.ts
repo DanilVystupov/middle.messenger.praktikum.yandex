@@ -1,7 +1,10 @@
+// TODO: Реализовать страницу профиля, со состояниями "изменить данные" и "изменить пароль". Закидывать моково флаг переключалки
+
 import Handlebars from 'handlebars'
 import * as Components from './components'
 import * as Pages from './pages'
 import {
+  BASE_PAGE,
   CHATS_PAGE,
   ERROR_404_PAGE,
   ERROR_500_PAGE,
@@ -95,7 +98,8 @@ const pages = {
           name: 'Андрей',
           avatar: ''
         }
-      }
+      },
+      isActiveModal: false
     }
   ]
 }
@@ -113,7 +117,7 @@ function navigate(page: string) {
   container.innerHTML = templatingFunction(context)
 }
 
-document.addEventListener('DOMContentLoaded', () => navigate(CHATS_PAGE))
+document.addEventListener('DOMContentLoaded', () => navigate(BASE_PAGE))
 
 document.addEventListener('click', (e) => {
   //@ts-ignore

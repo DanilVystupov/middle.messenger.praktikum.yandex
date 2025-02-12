@@ -1,22 +1,20 @@
 <div class="page-login">
-  <form class="form">
-    <div class="form-header">
-      <h2 class="form__title">
-        Вход
-      </h2>
-    </div>
+  {{#> Form}}
+    {{#*inline "title"}}
+      Вход
+    {{/inline}}
 
-    <div class="form-fields">
+    {{#*inline "fields"}}
       {{> Input label="Логин" type="text" placeholder="ivanivanov" }}
       {{> Input label="Пароль" type="password" placeholder="Пароль" autocomplete="current-password" }}
-    </div>
+    {{/inline}}
 
-    <div class="form-controls">
+    {{#*inline "controls"}}
       {{> Button text="Авторизоваться" type="primary" }}
 
       <a href="#" data-page="signUp">
         Нет аккаунта?
       </a>
-    </div>
-  </form>
+    {{/inline}}
+  {{/Form}}
 </div>
