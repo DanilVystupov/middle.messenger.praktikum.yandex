@@ -15,75 +15,111 @@
     </div>
 
     <ul class="chats-page-left__list chat-list">
-      <li class="chat-list__item chat-item-wrapper">
-        <div class="chat-item">
-          <img src="#" alt="alt" class="chat-item__image"/>
+      {{#each chatList}}
+        <li class="chat-list__item chat-item-wrapper">
+          <div class="chat-item {{#if isOpenChat}}chat-item--active{{/if}}">
+            {{#if userInfo.avatar}}
+              <img src="{{userInfo.avatar}}" alt="{{userInfo.name}}" class="chat-item__avatar"/>
 
-          <div class="chat-item__info">
-            <div class="chat-item__text">
-              <span class="chat-item__name f-13">
-                Андрей
-              </span>
+            {{else}}
+                <div class="chat-item__avatar chat-item__avatar--default"></div>
+            {{/if}}
 
-              <span class="chat-item__message f-12">
-                СООБЩЕНИЕ ОТ ЮЗЕРА
-              </span>
-            </div>
+            <div class="chat-item__info">
+              <div class="chat-item__text">
+                <span class="chat-item__name f-13">
+                  {{userInfo.name}}
+                </span>
 
-            <div class="chat-item__details">
-              <span class="chat-item__message-time f-9">
-                10:49
-              </span>
+                <span class="chat-item__message f-12">
+                  {{unreadMessage.lastMessage}}
+                </span>
+              </div>
 
-              <span class="chat-item__message-count f-11">
-                2
-              </span>
+              <div class="chat-item__details">
+                <span class="chat-item__message-time f-9">
+                  {{unreadMessage.date}}
+                </span>
+
+                {{#if unreadMessage.count}}
+                  <span class="chat-item__message-count f-11">
+                    {{unreadMessage.count}}
+                  </span>
+                {{/if}}
+              </div>
             </div>
           </div>
-        </div>
-      </li>
+        </li>
+      {{else}}
+        <p class="chat-list__empty">
+          Здесь появится список чатов
+        </p>
+      {{/each}}
     </ul>
   </div>
 
-  <div class="chats-page-right">
-    <div class="chats-page-right__header">
-      <div>
-        <img src="#" alt="аватарка" class="chat-item__image"/>
+  {{#if true}}
+    <div class="chats-page-right">
+      <div class="chats-page-right__header">
+        <div class="chat-item">
+          {{#if openChat.userInfo.avatar}}
+            <img src="{{openChat.userInfo.avatar}}" alt="{{openChat.userInfo.name}}" class="chat-item__avatar"/>
 
-        <div>
-          <span class="chat-item__name">
-            Андрей
-          </span>
+          {{else}}
+            <div class="chat-item__avatar chat-item__avatar--default"></div>
+          {{/if}}
+
+          <div>
+            <span class="chat-item__name">
+              {{openChat.userInfo.name}}
+            </span>
+          </div>
+        </div>
+
+        <div class="chats-page-right__menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
 
-      <div>
-        ...
+      <div class="chats-page-right__main">
+        <div class="chat-history-messages">
+          <div class="chat-history-messages__date f-12">
+            19 июня
+          </div>
+
+          <div class="chat-history-messages__message chat-history-messages__message--incoming">
+            <p class="chat-history-messages__message-text">
+              Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
+              <br/><br/>
+              Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
+            </p>
+
+            <span class="chat-history-messages__message-date f-9">
+              10:20
+            </span>
+          </div>
+
+          <div class="chat-history-messages__message chat-history-messages__message--outgoing">
+            <p class="chat-history-messages__message-text">
+              Круто!
+            </p>
+
+            <span class="chat-history-messages__message-date f-9">
+              12:00
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chats-page-right__footer">
+        <label>
+          <input type="text" placeholder="Сообщение" name="message"/>
+        </label>
+
+        {{> Button text="->" type="primary"  }}
       </div>
     </div>
-
-    <div class="chats-page-right__main">
-      <div class="chat-history-messages">
-        <div class="chat-history-messages__date">
-          19 июня
-        </div>
-
-        <div class="chat-history-messages__message chat-history-messages__message--incoming">
-          ВХОДЯЩЕЕ СООБЩЕНИЕ
-        </div>
-
-        <div class="chat-history-messages__message chat-history-messages__message--outgoing">
-          ИСХОДЯЩЕЕ СООБЩЕНИЕ
-        </div>
-      </div>
-    </div>
-
-    <div class="chats-page-right__footer">
-      <label>
-        <input type="text" placeholder="Сообщение" name="message"/>
-      </label>
-
-      {{> Button text="->" type="primary"  }}
-    </div>
-  </div>
+  {{/if}}
 </div>
