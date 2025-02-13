@@ -1,49 +1,13 @@
-// TODO: Реализовать страницу профиля, со состояниями "изменить данные" и "изменить пароль". Закидывать моково флаг переключалки
-
 import Handlebars from 'handlebars'
 import * as Components from './components'
 import * as Pages from './pages'
-import {
-  BASE_PAGE,
-  CHATS_PAGE,
-  ERROR_404_PAGE,
-  ERROR_500_PAGE,
-  LOGIN_PAGE,
-  PROFILE_PAGE
-} from './utils/constants.ts'
+import './helpers/index.ts'
+import { BASE_PAGE, CHATS_PAGE } from './utils/constants.ts'
 
 const pages = {
+  base: [Pages.BasePage],
   login: [Pages.LoginPage],
   signUp: [Pages.SignUpPage],
-  base: [Pages.BasePage],
-  profile: [
-    Pages.ProfilePage,
-    {
-      title: 'PROFILE PAGE'
-    }
-  ],
-  404: [
-    Pages.ErrorPage404,
-    {
-      number: 404,
-      message: 'Не туда попали',
-      link: {
-        text: 'Назад к чатам',
-        url: PROFILE_PAGE
-      }
-    }
-  ],
-  500: [
-    Pages.ErrorPage500,
-    {
-      number: 500,
-      message: 'Мы уже фиксим',
-      link: {
-        text: 'Назад к чатам',
-        url: PROFILE_PAGE
-      }
-    }
-  ],
   chats: [
     Pages.ChatsPage,
     {
@@ -100,6 +64,99 @@ const pages = {
         }
       },
       isActiveModal: false
+    }
+  ],
+  profile: [
+    Pages.ProfilePage,
+    {
+      user: {
+        uid: 1,
+        avatar: '',
+        displayName: 'Иван',
+        fields: [
+          {
+            title: 'Почта',
+            value: 'pochta@yandex.ru',
+            name: 'email',
+            type: 'text'
+          },
+          {
+            title: 'Логин',
+            value: 'ivanivanov',
+            name: 'login',
+            type: 'text'
+          },
+          {
+            title: 'Имя',
+            value: 'Иван',
+            name: 'name',
+            type: 'text'
+          },
+          {
+            title: 'Фамилия',
+            value: 'Иванов',
+            name: 'lastname',
+            type: 'text'
+          },
+          {
+            title: 'Имя в чате',
+            value: 'Иван',
+            name: 'username',
+            type: 'text'
+          },
+          {
+            title: 'Телефон',
+            value: +79099673030,
+            name: 'phone',
+            type: 'number',
+            mode: 'numeric'
+          }
+        ],
+        fieldsEditPassword: [
+          {
+            title: 'Старый пароль',
+            value: '**********',
+            name: 'old-password',
+            type: 'password'
+          },
+          {
+            title: 'Новый пароль',
+            value: '*******',
+            name: 'new-password',
+            type: 'password'
+          },
+          {
+            title: 'Повторите новый пароль',
+            value: '*******',
+            name: 'new-password',
+            type: 'password'
+          }
+        ]
+      },
+      isEditData: false,
+      isEditPassword: false
+    }
+  ],
+  404: [
+    Pages.ErrorPage404,
+    {
+      number: 404,
+      message: 'Не туда попали',
+      link: {
+        text: 'Назад к чатам',
+        url: CHATS_PAGE
+      }
+    }
+  ],
+  500: [
+    Pages.ErrorPage500,
+    {
+      number: 500,
+      message: 'Мы уже фиксим',
+      link: {
+        text: 'Назад к чатам',
+        url: CHATS_PAGE
+      }
     }
   ]
 }
