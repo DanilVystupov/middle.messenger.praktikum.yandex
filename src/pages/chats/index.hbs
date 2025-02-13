@@ -6,7 +6,7 @@
         data-page="profile"
         class="chats-page-left__link f-12"
       >
-        Профиль <span>></span>
+        Профиль {{{svgArrowRight}}}
       </a>
 
       <label>
@@ -115,15 +115,19 @@
     </div>
 
     <div class="chats-page-right__footer">
-      <label>
-        <input type="text" placeholder="Сообщение" name="message"/>
-      </label>
+      <form class="chats-page__form">
+        <label>
+          <input type="text" placeholder="Сообщение" name="message"/>
+        </label>
 
-      {{> Button text="->" type="primary"  }}
+        {{#> Button type="submit" theme="primary"}}
+          {{{svgArrowRightAlt}}}
+        {{/Button}}
+      </form>
     </div>
   </div>
 
-  {{#> Modal isActive=isActiveModal }}
+  {{#> Modal isActive=isActiveModal}}
     {{#*inline "title"}}
       Добавить пользователя
     {{/inline}}

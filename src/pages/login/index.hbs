@@ -5,16 +5,14 @@
     {{/inline}}
 
     {{#*inline "fields"}}
-      {{> Input label="Логин" type="text" placeholder="ivanivanov" }}
-      {{> Input label="Пароль" type="password" placeholder="Пароль" autocomplete="current-password" }}
+      {{> Input label="Логин" type="text" placeholder="ivanivanov" name="login" }}
+      {{> Input label="Пароль" type="password" placeholder="Пароль" autocomplete="current-password" name="password" }}
     {{/inline}}
 
     {{#*inline "controls"}}
-      {{> Button text="Авторизоваться" type="primary" }}
+      {{> Button type="submit" text="Войти" theme="primary" }}
 
-      <a href="#" data-page="signUp">
-        Нет аккаунта?
-      </a>
+      {{> Button type="submit" text="Нет аккаунта?" theme="secondary" dataPage="signUp" }}
     {{/inline}}
   {{/Form}}
 </div>

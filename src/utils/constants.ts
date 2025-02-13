@@ -1,5 +1,5 @@
 export const LOGIN_PAGE = 'login'
-export const SIGN_UP_PAGE = 'sign-up'
+export const SIGN_UP_PAGE = 'signUp'
 export const BASE_PAGE = 'base'
 export const PROFILE_PAGE = 'profile'
 export const ERROR_404_PAGE = '404'

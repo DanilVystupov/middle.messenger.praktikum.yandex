@@ -1,8 +1,18 @@
 import Handlebars from 'handlebars'
+
 import * as Components from './components'
 import * as Pages from './pages'
+
 import './helpers/index.ts'
 import { BASE_PAGE, CHATS_PAGE } from './utils/constants.ts'
+
+import avatar from './assets/images/avatar-default.jpg'
+import avatar2 from './assets/images/avatar-default2.jpg'
+import avatar3 from './assets/images/avatar-default3.jpg'
+import avatar4 from './assets/images/avatar-default4.jpg'
+
+import SvgArrowRight from './assets/icons/arrow-right.svg?raw'
+import SvgArrowRightAlt from './assets/icons/arrow-right-alt.svg?raw'
 
 const pages = {
   base: [Pages.BasePage],
@@ -17,7 +27,7 @@ const pages = {
           userInfo: {
             uid: 1,
             name: 'Андрей',
-            avatar: ''
+            avatar: avatar2
           },
           unreadMessage: {
             lastMessage: 'Последнее непрочитанное сообщение',
@@ -31,7 +41,7 @@ const pages = {
           userInfo: {
             uid: 2,
             name: 'Илья',
-            avatar: ''
+            avatar: avatar3
           },
           unreadMessage: {
             lastMessage: 'Друзья, у меня для вас особенный выпуск новостей!',
@@ -45,7 +55,7 @@ const pages = {
           userInfo: {
             uid: 3,
             name: 'Марк',
-            avatar: ''
+            avatar: avatar4
           },
           unreadMessage: {
             lastMessage: 'В 2008 году художник Jon Rafman начал собирать',
@@ -60,10 +70,12 @@ const pages = {
         userInfo: {
           uid: 1,
           name: 'Андрей',
-          avatar: ''
+          avatar: avatar2
         }
       },
-      isActiveModal: false
+      isActiveModal: false,
+      svgArrowRight: SvgArrowRight,
+      svgArrowRightAlt: SvgArrowRightAlt
     }
   ],
   profile: [
@@ -71,7 +83,7 @@ const pages = {
     {
       user: {
         uid: 1,
-        avatar: '',
+        avatar: avatar,
         displayName: 'Иван',
         fields: [
           {
@@ -89,19 +101,19 @@ const pages = {
           {
             title: 'Имя',
             value: 'Иван',
-            name: 'name',
+            name: 'first_name',
             type: 'text'
           },
           {
             title: 'Фамилия',
             value: 'Иванов',
-            name: 'lastname',
+            name: 'second_name',
             type: 'text'
           },
           {
             title: 'Имя в чате',
             value: 'Иван',
-            name: 'username',
+            name: 'display_name',
             type: 'text'
           },
           {
@@ -116,19 +128,19 @@ const pages = {
           {
             title: 'Старый пароль',
             value: '**********',
-            name: 'old-password',
+            name: 'oldPassword',
             type: 'password'
           },
           {
             title: 'Новый пароль',
             value: '*******',
-            name: 'new-password',
+            name: 'newPassword',
             type: 'password'
           },
           {
             title: 'Повторите новый пароль',
             value: '*******',
-            name: 'new-password',
+            name: 'newPassword',
             type: 'password'
           }
         ]
