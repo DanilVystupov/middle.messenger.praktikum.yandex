@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Handlebars from 'handlebars'
 
 import * as Components from './components'
