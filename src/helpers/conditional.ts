@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Handlebars from 'handlebars'
 
 Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {

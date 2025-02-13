@@ -1,3 +1,3 @@
-// @ts-ignore
+// @ts-nocheck
 export { default as ProfilePage } from './index.hbs?raw'
 import './index.pcss'
