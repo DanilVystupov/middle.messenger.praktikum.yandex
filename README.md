@@ -10,3 +10,5 @@ https://mellifluous-toffee-a46be8.netlify.app/
 Cобрать проект: `npm run build`
 
 Запустить проект на localhost: `npm run start`
+## Страницы
+Вывел список всех страниц на отдельной базовой странице
