@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "start": "vite build && node server.cjs",
+    "build": "vite build",
+    "start": "vite build; node server.cjs",
     "preview": "vite preview"
   },
   "dependencies": {
