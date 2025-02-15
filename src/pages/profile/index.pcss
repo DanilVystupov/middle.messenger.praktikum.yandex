@@ -16,7 +16,7 @@
   justify-content: center;
   padding-inline: 18px;
   background: #fbfbfb;
-  border-right: 1px solid #eaeaea;
+  border-right: 1px solid var(--grey-50);
 }
 
 .page-profile__link {
@@ -28,7 +28,7 @@
   min-width: fit-content;
   min-height: fit-content;
   color: #fff;
-  background: #3369f3;
+  background: var(--blue);
   border-radius: 50%;
 }
 
@@ -70,7 +70,7 @@
   }
 
   &--default {
-    background-color: #efefef;
+    background-color: var(--grey-100);
   }
 }
 
@@ -89,12 +89,12 @@
 
   &:not(:last-child) {
     padding-bottom: 10px;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid var(--grey-50);
   }
 }
 
 .profile-info-field__input {
-  color: #999999;
+  color: var(--grey-900);
 
   &::placeholder {
     font-size: 13px;
@@ -103,7 +103,7 @@
 }
 
 .profile-info-field__value {
-  color: #999999;
+  color: var(--grey-900);
 }
 
 .profile-info__footer {
@@ -115,7 +115,7 @@
   button {
     &:not(:last-child) {
       padding-bottom: 10px;
-      border-bottom: 1px solid #eaeaea;
+      border-bottom: 1px solid var(--grey-50);
     }
   }
 }
