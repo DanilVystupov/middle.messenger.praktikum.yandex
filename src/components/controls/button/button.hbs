@@ -1,0 +1,11 @@
+<button
+  type="{{type}}"
+  class="button button--{{theme}} {{#if position }}button--{{position}}{{/if}}"
+  data-page="{{dataPage}}"
+>
+  {{text}}
+
+  {{#if @partial-block}}
+    {{> @partial-block}}
+  {{/if}}
+</button>

@@ -1,0 +1,18 @@
+<main class="page-login">
+  {{#> Form}}
+    {{#*inline "title"}}
+      Вход
+    {{/inline}}
+
+    {{#*inline "fields"}}
+      {{> Input label="Логин" type="text" placeholder="ivanivanov" name="login" }}
+      {{> Input label="Пароль" type="password" placeholder="Пароль" autocomplete="current-password" name="password" }}
+    {{/inline}}
+
+    {{#*inline "controls"}}
+      {{> Button type="submit" text="Войти" theme="primary" }}
+
+      {{> Button type="submit" text="Нет аккаунта?" theme="secondary" dataPage="signUp" }}
+    {{/inline}}
+  {{/Form}}
+</main>

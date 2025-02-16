@@ -1,0 +1,53 @@
+.label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.field {
+  width: 100%;
+  border: none;
+  padding-bottom: 7px;
+  background-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  border-bottom: 1px solid var(--blue);
+  color: var(--dark-blue);
+
+  &::placeholder {
+    color: var(--grey-900);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 13px;
+    line-height: 100%;
+  }
+
+  &:focus-visible {
+    border-color: #2e9aff;
+    outline: none;
+  }
+
+  &:not(:placeholder-shown) + .text,
+  &:focus-visible + .text {
+    transform: translateY(-16px);
+    font-size: 9px;
+    cursor: pointer;
+  }
+
+  &:focus-visible::placeholder {
+    opacity: 1;
+  }
+}
+
+.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 7px;
+  transform: translate(0, 4px) scale(1);
+  color: var(--grey-900);
+  transition:
+    transform 0.3s,
+    font-size 0.3s;
+}

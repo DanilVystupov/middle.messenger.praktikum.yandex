@@ -1,0 +1,42 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 100%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Themes */
+.button--primary {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.button--secondary {
+  padding: 0;
+  color: var(--blue);
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.button--danger {
+  padding: 0;
+  color: var(--red);
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* Positions */
+.button--start {
+  justify-content: flex-start;
+}
+
+.button--end {
+  justify-content: flex-end;
+}

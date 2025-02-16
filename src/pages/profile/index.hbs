@@ -1,0 +1,110 @@
+<main class="page-profile">
+  <div class="page-profile__inner">
+    <div class="page-profile__content">
+      <div class="page-profile__left-block">
+        <a
+          class="page-profile__link"
+          href="#"
+          data-page="chats"
+        >
+          <-
+        </a>
+      </div>
+
+      <div class="page-profile__main-block">
+        <div class="page-profile__profile-info profile-info">
+          <div class="profile-info__header">
+            {{#if user.avatar}}
+              <picture class="profile-info__avatar">
+                <img src="{{user.avatar}}" alt="{{user.name}}"/>
+              </picture>
+            {{else}}
+              <div class="profile-info__avatar profile-info__avatar--default"></div>
+            {{/if}}
+
+            {{#ifCond isEditData '===' false}}
+              {{#ifCond isEditPassword '===' false}}
+                <div class="profile-info__name f-16">
+                  {{user.displayName}}
+                </div>
+              {{/ifCond}}
+            {{/ifCond}}
+          </div>
+
+          <div class="profile-info__main">
+            <ul class="profile-info__fields">
+              {{#if isEditData}}
+                {{#each user.fields}}
+                  <li class="profile-info__field profile-info-field">
+                    <span class="profile-info-field__title f-13">
+                      {{title}}
+                    </span>
+
+                    <label>
+                      <input
+                        class="profile-info-field__input f-13"
+                        type="{{type}}"
+                        value="{{value}}"
+                        name="{{name}}"
+                        {{#if mode}}
+                          inputmode="{{mode}}"
+                        {{/if}}
+                      />
+                    </label>
+                  </li>
+                {{/each}}
+              {{else if isEditPassword}}
+                {{#each user.fieldsEditPassword}}
+                  <li class="profile-info__field profile-info-field">
+                    <span class="profile-info-field__title f-13">
+                      {{title}}
+                    </span>
+
+                    <label>
+                      <input
+                        class="profile-info-field__input f-13"
+                        type="{{type}}"
+                        value="{{value}}"
+                        name="{{name}}"
+                      />
+                    </label>
+                  </li>
+                {{/each}}
+              {{else}}
+                {{#each user.fields}}
+                  <li class="profile-info__field profile-info-field">
+                    <span class="profile-info-field__title f-13">
+                      {{title}}
+                    </span>
+
+                    {{#if isEditData}}
+                      <div class="profile-info__avatar profile-info__avatar--default"></div>
+                    {{else}}
+                      <span class="profile-info-field__value f-13">
+                        {{value}}
+                      </span>
+                    {{/if}}
+                  </li>
+                {{/each}}
+              {{/if}}
+            </ul>
+          </div>
+
+          <div class="profile-info__footer">
+            {{#if isEditData}}
+              {{> Button type="submit" text="Сохранить" theme="primary" }}
+            {{else if isEditPassword}}
+              {{> Button type="submit" text="Сохранить" theme="primary" }}
+            {{else}}
+              {{> Button type="button" text="Изменить данные" theme="secondary" position="start" }}
+
+              {{> Button type="button" text="Изменить пароль" theme="secondary" position="start" }}
+
+              {{> Button type="button" text="Выйти" theme="danger" dataPage="base" position="start" }}
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

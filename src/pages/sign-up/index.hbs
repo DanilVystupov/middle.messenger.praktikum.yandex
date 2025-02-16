@@ -1,0 +1,23 @@
+<main class="page-sign-up">
+  {{#> Form}}
+    {{#*inline "title"}}
+      Регистрация
+    {{/inline}}
+
+    {{#*inline "fields"}}
+      {{> Input label="Почти" type="text" placeholder="pochta@yandex.ru" name="email" }}
+      {{> Input label="Логин" type="text" placeholder="ivanivanov" name="login" }}
+      {{> Input label="Имя" type="text" placeholder="Иван" name="first_name" }}
+      {{> Input label="Фамилия" type="text" placeholder="Иванов" name="second_name" }}
+      {{> Input label="Телефон" type="number" placeholder="+7 (800) 800 80 80" name="phone" }}
+      {{> Input label="Пароль" type="password" placeholder="Пароль" autocomplete="current-password" name="password" }}
+      {{> Input label="Пароль (ещё раз)" type="password" placeholder="Пароль (ещё раз)" autocomplete="current-password" name="password" }}
+    {{/inline}}
+
+    {{#*inline "controls"}}
+      {{> Button type="submit" text="Зарегистрироваться" theme="primary" }}
+
+      {{> Button type="submit" text="Войти" theme="secondary" dataPage="login" }}
+    {{/inline}}
+  {{/Form}}
+</main>
