@@ -1,8 +1,8 @@
-// @ts-nocheck
 import Handlebars from 'handlebars'
 
 import * as Components from './components'
 import * as Pages from './pages'
+import { PagesObject } from './types.ts'
 
 import './helpers/index.ts'
 import { BASE_PAGE, CHATS_PAGE } from './utils/constants.ts'
@@ -15,7 +15,7 @@ import avatar4 from './assets/images/avatar-default4.jpg'
 import SvgArrowRight from './assets/icons/arrow-right.svg?raw'
 import SvgArrowRightAlt from './assets/icons/arrow-right-alt.svg?raw'
 
-const pages = {
+const pages: PagesObject = {
   base: [Pages.BasePage],
   login: [Pages.LoginPage],
   signUp: [Pages.SignUpPage],
@@ -179,7 +179,6 @@ Object.entries(Components).forEach(([name, template]) => {
 })
 
 function navigate(page: string) {
-  //@ts-ignore
   const [source, context] = pages[page]
   const container = document.getElementById('app')!
 
@@ -190,10 +189,13 @@ function navigate(page: string) {
 document.addEventListener('DOMContentLoaded', () => navigate(BASE_PAGE))
 
 document.addEventListener('click', (e) => {
-  //@ts-ignore
-  const page = e.target.getAttribute('data-page')
-  if (page) {
-    navigate(page)
+  const target = e.target as HTMLElement
+  if (target) {
+    const page = target.getAttribute('data-page')
+
+    if (page) {
+      navigate(page)
+    }
 
     e.preventDefault()
     e.stopImmediatePropagation()
